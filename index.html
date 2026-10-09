@@ -58,10 +58,18 @@ footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-h
  const note=document.getElementById("detectNote");
  const launch=document.getElementById("launchStatus");
  const button=document.getElementById("hostButton");
- if(isPS4){status.textContent="✓ تم اكتشاف متصفح PS4";status.className="status-cell good";note.textContent="تم اكتشاف متصفح PS4 فقط؛ تأكد يدوياً أن إصدار النظام 9.00.";}
- else {status.textContent="! لم يتم اكتشاف PS4";status.className="status-cell warn";note.textContent="أنت على جهاز آخر أو أن المتصفح لا يعرّف نفسه كـ PS4. تابع فقط إذا كنت تعرف أن جهازك على 9.00.";}
+ if(isPS4){
+   status.textContent="✓ تم اكتشاف متصفح PS4";status.className="status-cell good";
+   note.textContent="تم اكتشاف متصفح PS4 فقط؛ تأكد أن إصدار النظام 9.00. جارٍ فتح مضيف التفعيل بعد لحظات…";
+   launch.textContent="● جارٍ تحويلك إلى مضيف GoldHEN…";
+   button.textContent="فتح المضيف الآن";
+   // Auto-open the external host on PS4; the host itself runs the exploit flow.
+   window.setTimeout(function(){ window.location.href=button.href; },1800);
+ } else {
+   status.textContent="! لم يتم اكتشاف PS4";status.className="status-cell warn";
+   note.textContent="الفتح التلقائي يعمل فقط عند اكتشاف متصفح PS4. إذا كنت تستخدم جهازاً آخر، افتح المضيف يدوياً من الزر.";
+ }
  button.addEventListener("click",function(e){
-  if(!isPS4&&!confirm("لم يتم اكتشاف متصفح PS4. هل تريد فتح مضيف GoldHEN رغم ذلك؟")){e.preventDefault();return;}
   launch.textContent="● جارٍ فتح مضيف التفعيل…";
   note.textContent="انتظر تعليمات المضيف الخارجي؛ نتيجة الاستغلال تظهر هناك.";
  });
