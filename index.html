@@ -81,6 +81,7 @@ footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-h
    note.textContent="تم اكتشاف متصفح PS4. تأكد من إصدار النظام 9.00، ثم اضغط زر البدء يدوياً للانتقال إلى المضيف.";
    launch.textContent="● جاهز — اضغط زر البدء عند الاستعداد";
    button.textContent="فتح مضيف مچاوي 9.00";
+   button.addEventListener("click",function(){ launch.textContent="● جارٍ فتح مضيف مچاوي…"; button.textContent="جارٍ الانتقال…"; button.style.pointerEvents="none"; button.style.opacity=".75"; });
  } else {
    status.textContent="! لم يتم اكتشاف PS4";status.className="status-cell warn";
    note.textContent="إذا كنت تستخدم PS4 بإصدار النظام 9.00، اضغط زر البدء يدوياً لفتح المضيف."
