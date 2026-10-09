@@ -31,14 +31,37 @@ jobs:
         with:
           repository: U01729/900
           path: upstream-host
-          # Use the upstream repository's default branch.
 
-      - name: Package host locally under this site
+      - name: Package and brand host locally
         run: |
           mkdir -p site/host
           rsync -a --delete --exclude='.git' upstream-host/ site/host/
           test -f site/host/index.html
           test -f site/host/goldhen.bin
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("site/host/index.html")
+          html = p.read_text(encoding="utf-8")
+          html = html.replace("4GAMER PSFree Host 9.xx", "MCHAWE PS4 Host 9.00")
+          html = html.replace("4GAMER", "MCHAWE")
+          html = html.replace("PSFree Host 9.xx", "MCHAWE GoldHEN Host 9.00")
+          brand_css = """
+          <style id="mchawe-brand">
+          :root { color-scheme: dark; }
+          body { background: linear-gradient(135deg,#080d20 0%,#101b3d 50%,#080d20 100%) !important; color:#f5f7ff !important; }
+          .main-title { background:linear-gradient(135deg,#ffffff 0%,#e3bd57 50%,#4777ff 100%) !important; -webkit-background-clip:text !important; background-clip:text !important; }
+          button { border-color:#e3bd57 !important; background:linear-gradient(110deg,#244bc4,#315eea) !important; color:#fff !important; }
+          button:hover { background:linear-gradient(110deg,#315eea,#4777ff) !important; border-color:#fff0b4 !important; }
+          .credits { background:linear-gradient(110deg,#101a3a,#244bc4) !important; border-top:1px solid #e3bd57 !important; }
+          .credit-link,.telegram-link { color:#ffe7a0 !important; }
+          .status-container,.notification { background:rgba(18,25,48,.86) !important; border-color:#394a7a !important; }
+          .version-info,#log { color:#8dffd3 !important; }
+          </style>
+          """
+          if "</head>" in html and "id=\"mchawe-brand\"" not in html:
+              html = html.replace("</head>", brand_css + "\\n</head>", 1)
+          p.write_text(html, encoding="utf-8")
+          PY
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
