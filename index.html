@@ -39,10 +39,10 @@ footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-h
     <div class="status-title">حالة الموقع — GoldHEN 9.00</div>
     <div class="status-row"><div class="status-cell good">✓ إصدار مستهدف: 9.00</div><div class="status-cell warn" id="deviceStatus">جارٍ فحص المتصفح…</div></div>
     <div class="statusbar" id="launchStatus">● جاهز — اضغط زر البدء لفتح مضيف التفعيل</div>
-    <div class="actions"><a class="btn" id="hostButton" href="https://syam-twentyone.github.io/900/" target="_blank" rel="noopener noreferrer">▶ بدء تفعيل GoldHEN 9.00</a></div>
+    <div class="actions"><a class="btn" id="hostButton" href="#localHost">▶ بدء تفعيل GoldHEN 9.00</a></div>
     <p class="note" id="detectNote">تأكد من إصدار النظام من إعدادات PS4. لا يمكن لصفحة ويب عادية قراءة رقم إصدار النظام بدقة.</p>
   </section>
-  <section class="panel"><h2>قبل البدء</h2><p class="muted">افتح هذا المضيف على جهاز PS4 بإصدار 9.00 فقط. اتبع تعليمات المضيف الخارجي، بما فيها أي متطلبات USB. لا تعرض الصفحة رسالة نجاح إلا إذا أكد المضيف نجاح الاستغلال.</p></section>
+  <section class="panel" id="localHost"><h2>مضيف التفعيل</h2><p class="muted">هذه الصفحة لا تحتوي حالياً على ملفات الاستغلال اللازمة لتفعيل GoldHEN مباشرةً. لا يمكن تشغيل الهاك بمجرد فتح الصفحة؛ يلزم دمج نسخة مضيف 9.00 كاملة وموثوقة ومتوافقة مع متصفح PS4.</p></section><section class="panel"><h2>قبل البدء</h2><p class="muted">افتح هذا المضيف على جهاز PS4 بإصدار 9.00 فقط. اتبع تعليمات المضيف الخارجي، بما فيها أي متطلبات USB. لا تعرض الصفحة رسالة نجاح إلا إذا أكد المضيف نجاح الاستغلال.</p></section>
   <div class="menu-grid">
     <div class="menu-item"><span>▤</span>التعليمات<small>خطوات التفعيل بالتفصيل</small></div>
     <div class="menu-item"><span>♢</span>معلومات مهمة<small>اقرأها قبل البدء</small></div>
@@ -70,8 +70,10 @@ footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-h
    note.textContent="الفتح التلقائي يعمل فقط عند اكتشاف متصفح PS4. إذا كنت تستخدم جهازاً آخر، افتح المضيف يدوياً من الزر.";
  }
  button.addEventListener("click",function(e){
-  launch.textContent="● جارٍ فتح مضيف التفعيل…";
-  note.textContent="انتظر تعليمات المضيف الخارجي؛ نتيجة الاستغلال تظهر هناك.";
+  e.preventDefault();
+  launch.textContent="● لا توجد ملفات استغلال مدمجة بعد";
+  note.textContent="مچاوي حالياً واجهة فقط. لن يبدأ التفعيل داخل هذه الصفحة حتى نضيف ملفات مضيف PS4 9.00 الصحيحة ونختبرها.";
+  document.getElementById("localHost").scrollIntoView();
  });
 })();
 </script>
