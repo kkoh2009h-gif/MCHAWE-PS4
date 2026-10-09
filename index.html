@@ -5,56 +5,65 @@
 <meta name="theme-color" content="#09090d">
 <meta name="description" content="مچاوي PS4 — واجهة مخصصة لـ GoldHEN على PS4 إصدار النظام 9.00 فقط">
 <title>MCHAWE PS4 | GoldHEN 9.00</title>
+
 <style>
-:root{--bg:#050b18;--panel:#0b1730;--panel2:#112344;--red:#e0b84e;--red2:#a87919;--line:#253e63;--muted:#b9c6dc;--white:#f7f9ff;--green:#66e6a0}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Tahoma,sans-serif;min-height:100vh;background-image:radial-gradient(ellipse at 50% -10%,#183d78 0,transparent 48%),linear-gradient(180deg,#07152c,#050b18 65%)}a{color:inherit}
-.wrap{width:min(100% - 30px,980px);margin:auto}
-header{position:sticky;top:0;z-index:5;background:#061126ee;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 0}.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:20px;letter-spacing:.5px}.brandmark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#f2d276,#9d741d);box-shadow:0 5px 22px #d7ad4430;font-size:17px}.brand b{color:var(--red)}.navtag{border:1px solid #5b2937;background:#211018;border-radius:30px;padding:8px 12px;color:#ffdce3;font-size:12px;white-space:nowrap}
-.hero{text-align:center;padding:48px 0 27px}.eyebrow{color:#f0d27b;font-size:12px;font-weight:bold;letter-spacing:2px}.emblem{width:86px;height:86px;border:1px solid #b18c3a;border-radius:25px;margin:16px auto 20px;display:grid;place-items:center;background:linear-gradient(145deg,#142d55,#08152b);box-shadow:0 0 55px #1d66c533;color:var(--red);font-size:39px}.hero h1{font-size:clamp(34px,8vw,62px);line-height:1.1;margin:0;font-weight:950;letter-spacing:-1px}.hero h1 span{color:var(--red)}.hero p{max-width:600px;margin:17px auto 0;color:#c4bdc8;line-height:2;font-size:16px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 24px}.stat{background:#ffffff06;border:1px solid #ffffff12;border-radius:14px;padding:14px 7px;text-align:center}.stat strong{display:block;font-size:15px}.stat span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
-.card{background:linear-gradient(145deg,#101f39,#091326);border:1px solid var(--line);border-radius:20px;padding:20px;margin:14px 0;box-shadow:0 18px 48px #0002}.cardhead{display:flex;align-items:center;gap:12px;margin-bottom:12px}.cardicon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:#16294a;border:1px solid #385887;color:#f1cf70;font-size:20px;flex-shrink:0}.card h2{font-size:19px;margin:0}.muted{color:var(--muted);font-size:13px;line-height:1.9;margin:5px 0 0}
-.status{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0d1713;border:1px solid #204b37;border-radius:12px;padding:13px 14px;margin:17px 0}.statuslabel{display:flex;align-items:center;gap:9px;font-weight:bold;font-size:14px}.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 13px #66e6a055}.version{color:#b8f5d1;font-size:13px}
-.actions{display:grid;gap:11px;margin-top:17px}.btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:54px;padding:14px 16px;border-radius:13px;text-decoration:none;text-align:center;font-weight:800;font-size:15px;transition:transform .15s,border-color .15s}.btn:active{transform:scale(.985)}.primary{background:linear-gradient(110deg,#ff2948,#c40e30);border:1px solid #ff536b;box-shadow:0 8px 24px #ff294820}.secondary{background:#101d33;border:1px solid #385987}.btn:hover{border-color:#f0d27b}
-.notice{font-size:12px;color:#bcb2bf;line-height:1.9;border-right:3px solid #b92a45;padding:2px 12px;margin-top:16px}
-.steps{padding:0 20px 0 0;margin:16px 0 0;display:grid;gap:13px}.steps li{color:#e8e0e8;line-height:1.85;padding-right:4px}.steps li::marker{color:var(--red);font-weight:bold}
-.grid2{display:grid;gap:13px}.mini{background:#100f15;border:1px solid #2d242f;border-radius:15px;padding:16px}.mini strong{display:block;margin-bottom:7px}.mini p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
-footer{text-align:center;color:#77717d;font-size:12px;padding:25px 0 32px;line-height:2}footer strong{color:#c9c1ce}
-@media(min-width:640px){.hero{padding-top:68px}.actions{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr 1fr}.card{padding:25px}.stats{max-width:600px;margin:25px auto}.hero p{font-size:18px}}
+:root{--blue:#315eea;--blue2:#4777ff;--bg:#10121b;--panel:#171a27;--line:#41475d;--muted:#b9bfd1;--white:#f5f7ff;--green:#55e7b1;--gold:#e3bd57}
+*{box-sizing:border-box}
+body{margin:0;background:#10121b;color:var(--white);font-family:Arial,Tahoma,sans-serif;min-height:100vh}
+a{color:inherit}
+.topbar{background:linear-gradient(115deg,#244bc4,#4778ff);padding:18px 15px 20px;box-shadow:0 5px 25px #0006}
+.top-inner{width:min(100%,980px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:900}.brandmark{width:39px;height:39px;display:grid;place-items:center;background:#ffffff20;border:1px solid #ffffff55;border-radius:50%;color:#ffe18a;font-size:22px}.brand b{color:#fff0b4}
+.top-tag{font-size:12px;background:#ffffff1c;border:1px solid #ffffff50;padding:8px 11px;border-radius:8px;white-space:nowrap}
+.wrap{width:min(100% - 24px,850px);margin:22px auto 36px}
+.host-title{text-align:center;font-size:clamp(23px,5vw,35px);margin:20px 0 8px;font-weight:800}
+.pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:12px 0 20px}.pill{border:1px solid #555d76;border-radius:30px;padding:7px 12px;font-size:12px;color:#d8dff6;background:#202437}.pill.green{color:#8affd0;border-color:#286e5c;background:#123a31}
+.panel{background:linear-gradient(145deg,#1b1e2b,#12141e);border:1px solid #464c61;border-radius:16px;padding:20px;box-shadow:0 14px 40px #0004;margin:15px 0}
+.status-title{text-align:center;color:var(--green);font-weight:800;font-size:17px;margin:3px 0 16px}
+.status-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.status-cell{text-align:center;padding:12px 8px;border:1px solid #50576b;background:#171a27;border-radius:9px;font-size:14px;font-weight:bold}.status-cell.good{color:#7bf2c2}.status-cell.warn{color:#ff8d9d}
+.statusbar{margin:18px 0 15px;background:#15392f;border:1px solid #2b886a;border-radius:9px;padding:12px 14px;color:#8dffd3;font-weight:bold}
+.actions{display:grid;gap:10px}.btn{display:flex;align-items:center;justify-content:center;text-decoration:none;text-align:center;padding:17px 14px;border-radius:10px;font-weight:800;font-size:16px;border:1px solid #5575ff;background:linear-gradient(110deg,#294fce,#3e70f3);box-shadow:0 6px 22px #315eea2b}.btn:active{transform:scale(.99)}
+.note{color:var(--muted);font-size:13px;line-height:1.9;margin:12px 0 0;text-align:center}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.menu-item{background:#1a1d2a;border:1px solid #41475d;border-radius:12px;padding:15px 8px;text-align:center;font-weight:bold;font-size:14px}.menu-item span{display:block;font-size:24px;margin-bottom:7px;color:#83a6ff}.menu-item small{display:block;font-weight:normal;color:var(--muted);margin-top:5px;font-size:11px;line-height:1.5}
+h2{font-size:18px;margin:0 0 8px}.muted{font-size:13px;color:var(--muted);line-height:1.9;margin:0}
+footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-height:2}
+@media(min-width:650px){.wrap{margin-top:35px}.panel{padding:25px}.menu-grid{gap:14px}}
+@media(max-width:420px){.top-tag{font-size:10px;padding:7px}.brand{font-size:19px}.menu-grid{grid-template-columns:1fr}.menu-item{text-align:right;padding:12px 15px}.menu-item span{display:inline-block;margin:0 0 0 10px}}
 </style></head>
 <body>
-<header><div class="wrap nav"><div class="brand"><span class="brandmark">♔</span><span>مچاوي <b>PS4</b></span></div><span class="navtag">ريال مدريد · GOLDHEN 9.00</span></div></header>
+<header class="topbar"><div class="top-inner"><div class="brand"><span class="brandmark">♔</span><span>مچاوي <b>PS4</b></span></div><span class="top-tag">REAL MADRID 🤍 · GOLDHEN</span></div></header>
 <main class="wrap">
-<section class="hero"><div class="eyebrow">HALA MADRID 🤍 · مخصص لإصدار 9.00</div><div class="emblem" aria-label="شعار مستوحى من ريال مدريد"><svg viewBox="0 0 100 100" width="70" height="70" role="img" aria-label="درع ملكي أزرق وذهبي"><circle cx="50" cy="55" r="34" fill="#f8f6ee" stroke="#d6ad45" stroke-width="5"/><circle cx="50" cy="55" r="27" fill="#143d82" stroke="#d6ad45" stroke-width="2"/><path d="M28 42 L70 68 M29 68 L69 42" stroke="#f5d66d" stroke-width="5"/><text x="50" y="63" text-anchor="middle" font-size="27" font-weight="bold" fill="#fff">M</text><path d="M28 20 L22 10 L37 15 L50 5 L63 15 L78 10 L72 20 Z" fill="#e8c55f" stroke="#a77c23" stroke-width="2"/></svg></div><h1>مچاوي <span>PS4</span></h1><p>واجهة مچاوي لأجهزة PlayStation 4 بنكهة ملكية مستوحاة من ريال مدريد، للوصول إلى مضيف GoldHEN الخاص بإصدار النظام 9.00.</p></section>
-<section class="stats" aria-label="معلومات المشروع"><div class="stat"><strong>PS4</strong><span>المنصة</span></div><div class="stat"><strong>9.00 ONLY</strong><span>إصدار مدعوم بالواجهة</span></div><div class="stat"><strong>GoldHEN</strong><span>المضيف الخارجي</span></div></section>
-<section class="card"><div class="cardhead"><div class="cardicon">⌁</div><div><h2>مضيف GoldHEN لإصدار 9.00</h2><p class="muted">رابط المضيف والتعليمات الخاصة بهذا الإصدار</p></div></div>
-<div class="status"><div class="statuslabel"><span class="dot" id="deviceDot"></span><span id="deviceStatus">جارٍ فحص المتصفح…</span></div><span class="version" id="firmwareStatus">جاهز للفحص</span></div>
-<p class="muted" id="detectNote" aria-live="polite">المتصفح لا يكشف رقم إصدار نظام PS4 بشكل موثوق من صفحة ويب عادية؛ لذلك تأكد من أن جهازك على 9.00 قبل بدء التفعيل.</p>
-<p class="muted">عند الضغط على زر البدء ستظهر حالة فتح المضيف ثم تنتقل إلى مضيف PSFree/Lapse الخارجي. نتيجة الاستغلال الفعلية تظهر من المضيف نفسه؛ صفحة MCHAWE لا تستطيع تأكيد نجاحه من دون تكامل يدعمه المضيف.</p>
-<div class="actions"><a class="btn primary" id="hostButton" href="https://syam-twentyone.github.io/900/" target="_blank" rel="noopener noreferrer">بدء تفعيل GoldHEN 9.00 <span id="hostArrow">↗</span></a></div>
-<div class="notice">تنبيه: مخصص لإصدار 9.00 فقط. اتبع تعليمات المضيف الموثوق الخاصة بهذا الإصدار، ولا تحدّث النظام إذا كنت تريد المحافظة على توافق 9.00.</div></section>
-<section class="card"><div class="cardhead"><div class="cardicon">✓</div><div><h2>قبل استخدام المضيف</h2><p class="muted">قائمة تحقق مختصرة</p></div></div><ol class="steps"><li>تأكد من إصدار النظام من الإعدادات ← النظام ← معلومات النظام.</li><li>اقرأ تعليمات المضيف المخصص لإصدار 9.00، بما فيها متطلبات USB.</li><li>اتبع الخطوات المعروضة على المضيف نفسه؛ هذه الصفحة لا تشغّل GoldHEN تلقائياً.</li><li>إذا ظهر خطأ، صوّر الرسالة واحتفظ بها لتحديد السبب قبل إعادة المحاولة.</li></ol></section>
-<section class="mini"><strong>التوافق</strong><p>هذه الصفحة معدّة لنظام PS4 9.00 فقط. الإصدارات الأخرى ليست ضمن نطاق هذا الموقع.</p></section>
-<footer><strong>مچاوي PS4 🤍</strong><br>واجهة مجتمعية مستقلة · HALA MADRID</footer>
+  <h1 class="host-title">مچاوي GoldHEN Host</h1>
+  <div class="pills"><span class="pill">PS4 · إصدار 9.00</span><span class="pill green">واجهة متوافقة مع متصفح PS4</span></div>
+  <section class="panel">
+    <div class="status-title">حالة الموقع — GoldHEN 9.00</div>
+    <div class="status-row"><div class="status-cell good">✓ إصدار مستهدف: 9.00</div><div class="status-cell warn" id="deviceStatus">جارٍ فحص المتصفح…</div></div>
+    <div class="statusbar" id="launchStatus">● جاهز — اضغط زر البدء لفتح مضيف التفعيل</div>
+    <div class="actions"><a class="btn" id="hostButton" href="https://syam-twentyone.github.io/900/" target="_blank" rel="noopener noreferrer">▶ بدء تفعيل GoldHEN 9.00</a></div>
+    <p class="note" id="detectNote">تأكد من إصدار النظام من إعدادات PS4. لا يمكن لصفحة ويب عادية قراءة رقم إصدار النظام بدقة.</p>
+  </section>
+  <section class="panel"><h2>قبل البدء</h2><p class="muted">افتح هذا المضيف على جهاز PS4 بإصدار 9.00 فقط. اتبع تعليمات المضيف الخارجي، بما فيها أي متطلبات USB. لا تعرض الصفحة رسالة نجاح إلا إذا أكد المضيف نجاح الاستغلال.</p></section>
+  <div class="menu-grid">
+    <div class="menu-item"><span>▤</span>التعليمات<small>خطوات التفعيل بالتفصيل</small></div>
+    <div class="menu-item"><span>♢</span>معلومات مهمة<small>اقرأها قبل البدء</small></div>
+    <div class="menu-item"><span>↻</span>إعادة المحاولة<small>ارجع للمضيف إذا فشلت المحاولة</small></div>
+  </div>
+  <footer>© 2026 مچاوي<br>مچاوي PS4 · GOLDHEN 9.00 · HALA MADRID 🤍</footer>
 </main>
 <script>
 (function(){
- const ua = navigator.userAgent || "";
- const isPS4 = /PlayStation 4|PlayStation 4\s/i.test(ua) || /PlayStation 4/.test(navigator.platform || "");
- const status = document.getElementById("deviceStatus");
- const note = document.getElementById("detectNote");
- const dot = document.getElementById("deviceDot");
- const button = document.getElementById("hostButton");
- if (isPS4) {
-   status.textContent = "تم اكتشاف متصفح PlayStation 4";
-   note.textContent = "تم التعرف على المتصفح فقط، وليس إصدار النظام. تأكد أن جهازك يعمل على 9.00 قبل المتابعة.";
- } else {
-   status.textContent = "لم يتم اكتشاف متصفح PS4";
-   dot.style.background = "#e6b35d";
-   note.textContent = "أنت تتصفح من جهاز آخر أو أن المتصفح لا يعرّف نفسه كـ PS4. هذه الصفحة لا تستطيع قراءة إصدار النظام؛ لا تتابع إلا إذا كان جهازك على 9.00.";
- }
- button.addEventListener("click", function(e) {
-   if (!isPS4 && !confirm("لم يتم اكتشاف متصفح PS4. هل تريد فتح مضيف GoldHEN على أي حال؟")) e.preventDefault();
+ const ua=navigator.userAgent||"";
+ const isPS4=/PlayStation 4/i.test(ua)||/PlayStation 4/i.test(navigator.platform||"");
+ const status=document.getElementById("deviceStatus");
+ const note=document.getElementById("detectNote");
+ const launch=document.getElementById("launchStatus");
+ const button=document.getElementById("hostButton");
+ if(isPS4){status.textContent="✓ تم اكتشاف متصفح PS4";status.className="status-cell good";note.textContent="تم اكتشاف متصفح PS4 فقط؛ تأكد يدوياً أن إصدار النظام 9.00.";}
+ else {status.textContent="! لم يتم اكتشاف PS4";status.className="status-cell warn";note.textContent="أنت على جهاز آخر أو أن المتصفح لا يعرّف نفسه كـ PS4. تابع فقط إذا كنت تعرف أن جهازك على 9.00.";}
+ button.addEventListener("click",function(e){
+  if(!isPS4&&!confirm("لم يتم اكتشاف متصفح PS4. هل تريد فتح مضيف GoldHEN رغم ذلك؟")){e.preventDefault();return;}
+  launch.textContent="● جارٍ فتح مضيف التفعيل…";
+  note.textContent="انتظر تعليمات المضيف الخارجي؛ نتيجة الاستغلال تظهر هناك.";
  });
 })();
 </script>
