@@ -27,6 +27,14 @@ a{color:inherit}
 .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.menu-item{background:#1a1d2a;border:1px solid #41475d;border-radius:12px;padding:15px 8px;text-align:center;font-weight:bold;font-size:14px}.menu-item span{display:block;font-size:24px;margin-bottom:7px;color:#83a6ff}.menu-item small{display:block;font-weight:normal;color:var(--muted);margin-top:5px;font-size:11px;line-height:1.5}
 h2{font-size:18px;margin:0 0 8px}.muted{font-size:13px;color:var(--muted);line-height:1.9;margin:0}
 footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-height:2}
+.library-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:15px}
+.game-card{background:linear-gradient(145deg,#1c2235,#121827);border:1px solid #3d4a70;border-radius:13px;padding:16px;display:flex;flex-direction:column;gap:9px}
+.game-card .game-icon{font-size:28px}
+.game-card h3{font-size:16px;margin:0;color:#fff0b4}
+.game-card p{font-size:12px;line-height:1.8;color:#c2cbe3;margin:0;flex:1}
+.game-card a{display:block;text-align:center;text-decoration:none;background:linear-gradient(110deg,#244bc4,#315eea);border:1px solid #e3bd57;border-radius:8px;padding:11px 8px;font-weight:bold;font-size:13px}
+.library-warning{margin-top:12px;border:1px solid #806b35;background:#2a2518;color:#ffe7a0;border-radius:10px;padding:12px;font-size:12px;line-height:1.9}
+
 @media(min-width:650px){.wrap{margin-top:35px}.panel{padding:25px}.menu-grid{gap:14px}}
 @media(max-width:420px){.top-tag{font-size:10px;padding:7px}.brand{font-size:19px}.menu-grid{grid-template-columns:1fr}.menu-item{text-align:right;padding:12px 15px}.menu-item span{display:inline-block;margin:0 0 0 10px}}
 </style></head>
@@ -48,6 +56,16 @@ footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-h
     <div class="menu-item"><span>♢</span>معلومات مهمة<small>اقرأها قبل البدء</small></div>
     <div class="menu-item"><span>↻</span>إعادة المحاولة<small>ارجع للمضيف إذا فشلت المحاولة</small></div>
   </div>
+  <section class="panel" id="game-library">
+    <h2>🎮 مكتبة مچاوي للألعاب والتطبيقات</h2>
+    <p class="muted">مكتبة أولية تجمع ألعاب Homebrew المجانية ومصادرها الرسمية. افتح المصدر للتأكد من توافق اللعبة وطريقة تثبيتها على جهازك.</p>
+    <div class="library-grid">
+      <article class="game-card"><div class="game-icon">🕹️</div><h3>ألعاب Homebrew</h3><p>قائمة ألعاب وتجارب مطوّرة من المجتمع لجهاز PS4، مع معلومات عن كل مشروع ومصدره.</p><a href="https://consolemods.org/wiki/PS4:Emulators_and_Homebrew_Games" target="_blank" rel="noopener">استعراض الألعاب</a></article>
+      <article class="game-card"><div class="game-icon">🧩</div><h3>مشاريع PS4 المفتوحة</h3><p>استكشف مشاريع المجتمع مفتوحة المصدر، وقد تجد ألعاباً وأدوات مجانية مع ملفات الإصدار عند توفرها.</p><a href="https://github.com/topics/ps4-homebrew" target="_blank" rel="noopener">فتح مكتبة المشاريع</a></article>
+      <article class="game-card"><div class="game-icon">📦</div><h3>ملفات PKG المصرّح بها</h3><p>مكان مخصص لاحقاً لإضافة ملفات التطبيقات والألعاب التي تملك حق توزيعها أو نسخك الاحتياطية القانونية.</p><a href="https://github.com/topics/ps4-homebrew" target="_blank" rel="noopener">مصادر Homebrew</a></article>
+    </div>
+    <div class="library-warning">ملاحظة: روابط المكتبة الحالية تفتح مصادر خارجية موثوقة للمشاريع، وليست مستودع تنزيل مباشر لملفات ألعاب تجارية. ما راح نضيف ملفات مقرصنة أو نعرض زر تنزيل وهمي.</div>
+  </section>
   <footer>© 2026 مچاوي<br>مچاوي PS4 · GOLDHEN 9.00 · HALA MADRID 🤍</footer>
 </main>
 <script>
