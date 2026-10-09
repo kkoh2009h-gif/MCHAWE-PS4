@@ -56,24 +56,6 @@ footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-h
     <div class="menu-item"><span>♢</span>معلومات مهمة<small>اقرأها قبل البدء</small></div>
     <div class="menu-item"><span>↻</span>إعادة المحاولة<small>ارجع للمضيف إذا فشلت المحاولة</small></div>
   </div>
-  <section class="panel" id="game-library">
-    <h2>🎮 مكتبة مچاوي للألعاب والتطبيقات</h2>
-    <p class="muted">مكتبة أولية تجمع ألعاب Homebrew المجانية ومصادرها الرسمية. افتح المصدر للتأكد من توافق اللعبة وطريقة تثبيتها على جهازك.</p>
-    <input id="gameSearch" type="search" placeholder="ابحث عن لعبة أو تطبيق..." aria-label="ابحث في مكتبة الألعاب" style="width:100%;margin-top:14px;padding:13px 14px;border-radius:10px;border:1px solid #41475d;background:#101525;color:#fff;font:inherit">
-    <div class="pills" id="libraryFilters">
-      <button type="button" class="pill library-filter" data-filter="all">الكل</button>
-      <button type="button" class="pill library-filter" data-filter="games">ألعاب ومشاريع</button>
-      <button type="button" class="pill library-filter" data-filter="apps">تطبيقات Homebrew</button>
-    </div>
-    <div class="library-grid" id="libraryGrid">
-      <article class="game-card" data-kind="games"><div class="game-icon">🕹️</div><h3>ألعاب وتجارب PS4</h3><p>استعرض ألعاب Homebrew والتجارب التي يشاركها مجتمع PS4. تحقق من صفحة كل مشروع من التوافق وطريقة التثبيت.</p><a href="https://consolemods.org/wiki/PS4:Emulators_and_Homebrew_Games" target="_blank" rel="noopener">استعراض الألعاب</a></article>
-      <article class="game-card" data-kind="apps"><div class="game-icon">🛍️</div><h3>Homebrew Store</h3><p>مصدر مجتمعي لتطبيقات وأدوات Homebrew. التنزيل والتثبيت قد يتطلبان جهازاً مهيأً لتشغيل Homebrew.</p><a href="https://github.com/LightningMods/PS4-Store/releases" target="_blank" rel="noopener">صفحة الإصدارات</a></article>
-      <article class="game-card" data-kind="apps"><div class="game-icon">💾</div><h3>Apollo Save Tool</h3><p>أداة لإدارة ملفات الحفظ على PS4. نزّل الإصدار من صفحة المطوّر الرسمية واقرأ التعليمات قبل التثبيت.</p><a href="https://github.com/bucanero/apollo-ps4/releases" target="_blank" rel="noopener">تنزيل من الإصدارات</a></article>
-      <article class="game-card" data-kind="apps"><div class="game-icon">🧰</div><h3>مشاريع Homebrew</h3><p>تصفح مشاريع PS4 مفتوحة المصدر، وابحث عن أدوات أو ألعاب مجانية تنشر ملفاتها من خلال الإصدارات.</p><a href="https://github.com/topics/ps4-homebrew" target="_blank" rel="noopener">تصفح المشاريع</a></article>
-      <article class="game-card" data-kind="games"><div class="game-icon">📚</div><h3>دليل ألعاب ومشاريع المجتمع</h3><p>دليل معلوماتي لمشاريع الألعاب والمحاكيات. بعض الصفحات تقدم شرحاً فقط ولا تستضيف الملفات بنفسها.</p><a href="https://consolemods.org/wiki/PS4:Homebrew" target="_blank" rel="noopener">فتح الدليل</a></article>
-    </div>
-    <div class="library-warning">تنبيه: الأزرار تفتح صفحات الإصدارات أو مصادر المجتمع، وليست كل الروابط تنزيل PKG مباشر. تنزيل ملف من المتصفح لا يضمن تثبيته تلقائياً على PS4. المكتبة مخصصة للمشاريع المجانية والملفات التي تملك حق استخدامها، ولا تتضمن ألعاباً تجارية مقرصنة.</div>
-  </section>
   <footer>© 2026 مچاوي<br>مچاوي PS4 · GOLDHEN 9.00 · HALA MADRID 🤍</footer>
 </main>
 <script>
@@ -94,29 +76,6 @@ footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-h
    status.textContent="! لم يتم اكتشاف PS4";status.className="status-cell warn";
    note.textContent="إذا كنت تستخدم PS4 بإصدار النظام 9.00، اضغط زر البدء يدوياً لفتح المضيف."
  }
- // Library search and category filters
- const search = document.getElementById("gameSearch");
- const cards = Array.from(document.querySelectorAll("#libraryGrid .game-card"));
- let activeFilter = "all";
- function filterLibrary(){
-   const q = (search.value || "").trim().toLowerCase();
-   cards.forEach(function(card){
-     const matchesText = card.textContent.toLowerCase().includes(q);
-     const matchesKind = activeFilter === "all" || card.dataset.kind === activeFilter;
-     card.style.display = matchesText && matchesKind ? "" : "none";
-   });
- }
- search.addEventListener("input", filterLibrary);
- document.querySelectorAll(".library-filter").forEach(function(btn){
-   btn.addEventListener("click", function(){
-     activeFilter = btn.dataset.filter;
-     document.querySelectorAll(".library-filter").forEach(function(b){
-       b.style.background = b === btn ? "#315eea" : "#202437";
-       b.style.borderColor = b === btn ? "#e3bd57" : "#555d76";
-     });
-     filterLibrary();
-   });
- });
  // Leave the anchor's default navigation intact so the button always opens the local host.
 })();
 </script>
