@@ -1,4 +1,4 @@
-name: Deploy MCHAWE PS4 to GitHub Pages
+name: Deploy MCHAWE PS4 with local 9.00 host
 
 on:
   push:
@@ -21,14 +21,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout MCHAWE site
         uses: actions/checkout@v4
+        with:
+          path: site
+
+      - name: Checkout public PS4 9.00 host source
+        uses: actions/checkout@v4
+        with:
+          repository: U01729/900
+          path: upstream-host
+          # Use the upstream repository's default branch.
+
+      - name: Package host locally under this site
+        run: |
+          mkdir -p site/host
+          rsync -a --delete --exclude='.git' upstream-host/ site/host/
+          test -f site/host/index.html
+          test -f site/host/goldhen.bin
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
