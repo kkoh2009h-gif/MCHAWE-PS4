@@ -28,11 +28,34 @@ footer{text-align:center;color:#77717d;font-size:12px;padding:25px 0 32px;line-h
 <section class="hero"><div class="eyebrow">مخصص حصراً لإصدار النظام 9.00</div><div class="emblem">✦</div><h1>PS4 <span>GOLDHEN</span></h1><p>موقع MCHAWE المخصص لأجهزة PlayStation 4 التي تعمل بإصدار النظام 9.00. واجهة بسيطة للوصول إلى مضيف GoldHEN وتعليمات هذا الإصدار فقط.</p></section>
 <section class="stats" aria-label="معلومات المشروع"><div class="stat"><strong>PS4</strong><span>المنصة</span></div><div class="stat"><strong>9.00 ONLY</strong><span>إصدار مدعوم بالواجهة</span></div><div class="stat"><strong>GoldHEN</strong><span>المضيف الخارجي</span></div></section>
 <section class="card"><div class="cardhead"><div class="cardicon">⌁</div><div><h2>مضيف GoldHEN لإصدار 9.00</h2><p class="muted">رابط المضيف والتعليمات الخاصة بهذا الإصدار</p></div></div>
-<div class="status"><div class="statuslabel"><span class="dot"></span><span>الإصدار المحدد</span></div><span class="version">9.00 فقط</span></div>
+<div class="status"><div class="statuslabel"><span class="dot" id="deviceDot"></span><span id="deviceStatus">جارٍ فحص المتصفح…</span></div><span class="version" id="firmwareStatus">الإصدار 9.00</span></div>
+<p class="muted" id="detectNote" aria-live="polite">المتصفح لا يكشف رقم إصدار نظام PS4 بشكل موثوق من صفحة ويب عادية؛ لذلك لن ندّعي أن الإصدار تم التعرف عليه تلقائياً.</p>
 <p class="muted">هذه الصفحة مخصصة لإصدار النظام 9.00 فقط. هي واجهة وصول وليست أداة استغلال مستقلة؛ فتحها وحده لا يفعّل GoldHEN.</p>
-<div class="actions"><a class="btn primary" href="https://psx8.github.io/" target="_blank" rel="noopener noreferrer">فتح مضيف GoldHEN <span>↗</span></a></div>
+<div class="actions"><a class="btn primary" id="hostButton" href="https://psx8.github.io/" target="_blank" rel="noopener noreferrer">متابعة إلى مضيف GoldHEN 9.00 <span>↗</span></a></div>
 <div class="notice">تنبيه: مخصص لإصدار 9.00 فقط. اتبع تعليمات المضيف الموثوق الخاصة بهذا الإصدار، ولا تحدّث النظام إذا كنت تريد المحافظة على توافق 9.00.</div></section>
 <section class="card"><div class="cardhead"><div class="cardicon">✓</div><div><h2>قبل استخدام المضيف</h2><p class="muted">قائمة تحقق مختصرة</p></div></div><ol class="steps"><li>تأكد من إصدار النظام من الإعدادات ← النظام ← معلومات النظام.</li><li>اقرأ تعليمات المضيف المخصص لإصدار 9.00، بما فيها متطلبات USB.</li><li>اتبع الخطوات المعروضة على المضيف نفسه؛ هذه الصفحة لا تشغّل GoldHEN تلقائياً.</li><li>إذا ظهر خطأ، صوّر الرسالة واحتفظ بها لتحديد السبب قبل إعادة المحاولة.</li></ol></section>
 <section class="mini"><strong>التوافق</strong><p>هذه الصفحة معدّة لنظام PS4 9.00 فقط. الإصدارات الأخرى ليست ضمن نطاق هذا الموقع.</p></section>
 <footer><strong>MCHAWE PS4</strong><br>واجهة مجتمعية مستقلة · صُممت للأجهزة المحمولة ومتصفح PS4</footer>
-</main></body></html>
+</main>
+<script>
+(function(){
+ const ua = navigator.userAgent || "";
+ const isPS4 = /PlayStation 4|PlayStation 4\s/i.test(ua) || /PlayStation 4/.test(navigator.platform || "");
+ const status = document.getElementById("deviceStatus");
+ const note = document.getElementById("detectNote");
+ const dot = document.getElementById("deviceDot");
+ const button = document.getElementById("hostButton");
+ if (isPS4) {
+   status.textContent = "تم اكتشاف متصفح PlayStation 4";
+   note.textContent = "تم التعرف على المتصفح فقط، وليس إصدار النظام. تأكد أن جهازك يعمل على 9.00 قبل المتابعة.";
+ } else {
+   status.textContent = "لم يتم اكتشاف متصفح PS4";
+   dot.style.background = "#e6b35d";
+   note.textContent = "أنت تتصفح من جهاز آخر أو أن المتصفح لا يعرّف نفسه كـ PS4. هذه الصفحة لا تستطيع قراءة إصدار النظام؛ لا تتابع إلا إذا كان جهازك على 9.00.";
+ }
+ button.addEventListener("click", function(e) {
+   if (!isPS4 && !confirm("لم يتم اكتشاف متصفح PS4. هل تريد فتح مضيف GoldHEN على أي حال؟")) e.preventDefault();
+ });
+})();
+</script>
+</body></html>
