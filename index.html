@@ -60,14 +60,12 @@ footer{text-align:center;padding:10px 0 24px;color:#9198ad;font-size:12px;line-h
  const button=document.getElementById("hostButton");
  if(isPS4){
    status.textContent="✓ تم اكتشاف متصفح PS4";status.className="status-cell good";
-   note.textContent="تم اكتشاف متصفح PS4 فقط؛ تأكد أن إصدار النظام 9.00. جارٍ فتح مضيف مچاوي المحلي…";
-   launch.textContent="● جارٍ فتح مضيف مچاوي المحلي…";
+   note.textContent="تم اكتشاف متصفح PS4. تأكد من إصدار النظام 9.00، ثم اضغط زر البدء يدوياً للانتقال إلى المضيف.";
+   launch.textContent="● جاهز — اضغط زر البدء عند الاستعداد";
    button.textContent="فتح مضيف مچاوي 9.00";
-   // Auto-open the external host on PS4; the host itself runs the exploit flow.
-   window.setTimeout(function(){ window.location.href=button.href; },1800);
  } else {
    status.textContent="! لم يتم اكتشاف PS4";status.className="status-cell warn";
-   note.textContent="الفتح التلقائي يعمل فقط عند اكتشاف متصفح PS4. إذا كنت تستخدم جهازاً آخر، افتح المضيف يدوياً من الزر.";
+   note.textContent="إذا كنت تستخدم PS4 بإصدار النظام 9.00، اضغط زر البدء يدوياً لفتح المضيف."
  }
  // Leave the anchor's default navigation intact so the button always opens the local host.
 })();
